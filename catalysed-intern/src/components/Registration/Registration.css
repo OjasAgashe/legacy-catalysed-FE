@@ -1,0 +1,29 @@
+.first-name{
+    margin-right: 3px;
+}
+.registration-container{
+    width:425px;
+    height:400px;
+}
+.form-control{
+    border:none;
+    border-bottom: 1px solid gray;
+  }
+.registration-mother-container{
+    background-image: linear-gradient(90deg, #19d3ae,#0fcfec);
+    width: 100vw;
+    height: 100vh;
+}
+@media(max-width:425px){
+    .registration-container{
+        width:95%;
+        height:auto
+    }
+    .form-control{
+        border:none;
+        border-bottom: 1px solid gray;
+      }
+}
+.login-click{
+    cursor: pointer;
+}
