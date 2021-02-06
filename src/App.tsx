@@ -8,16 +8,36 @@ import {
   Link
 } from "react-router-dom";
 import OrganizationRegistration from './components/OrganizationRegistration/OrganizationRegistration';
+import OrganizationDetail from './components/OrganizationDetail/OrganizationDetail';
+import StudentRegistration from './components/StudentRegistration/StudentRegistration';
+import MentorRegistration from './components/MentorRegistration/MentorRegistration';
+import NotFound from './components/NotFound/NotFound';
+
 function App() {
   return (
     <div className="App">
       <Router>
-        <Route path="/home">
+        <Switch>
+        <Route path="/organizer">
           <OrganizationRegistration/>
         </Route>
+        <Route exact path="/organizationDetail">
+         <OrganizationDetail/>
+        </Route>
+        <Route path="/student">
+         <StudentRegistration/>
+        </Route>
+        <Route path="/mentor">
+         <MentorRegistration/>
+        </Route>
+       
         <Route exact path="/">
        <OrganizationRegistration/>
         </Route>
+        <Route exact path="*">
+       <NotFound/>
+        </Route>
+        </Switch>
       </Router>
   
     </div>
