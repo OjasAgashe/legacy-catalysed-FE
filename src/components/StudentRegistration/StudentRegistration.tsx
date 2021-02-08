@@ -14,7 +14,7 @@ const StudentRegistration = () => {
             </div><br/>
             <input type="email" className="form-control form-control-sm " placeholder="Your  Email Id" required/><br/>
             <input type="password" className="form-control form-control-sm " placeholder="Password" required/><br/>
-            <input type="password"className="form-control form-control-sm " placeholder="Confirm Password" />
+            <input type="password"className="form-control form-control-sm " placeholder="Confirm Password"required />
             <input type="button" className="btn btn-sm btn-student text-white  mt-4 w-100" value="Sign Up"/>
   
         </form>
