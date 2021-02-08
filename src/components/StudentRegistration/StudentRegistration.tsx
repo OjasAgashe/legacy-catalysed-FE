@@ -9,11 +9,11 @@ const StudentRegistration = () => {
             <h1>Create an account</h1> 
         <form className=" container  mt-4" >
             <div className="d-flex ">
-            <input type="text" className="form-control form-control-sm first-name " placeholder="First Name"/> &nbsp;<br/>
-            <input type="text" className="form-control form-control-sm last-name overflow-hidden" placeholder="Last Name"/>
+            <input type="text" className="form-control form-control-sm first-name  overflow-hidden" placeholder="First Name" required/> &nbsp;<br/>
+            <input type="text" className="form-control form-control-sm last-name overflow-hidden" placeholder="Last Name" required/>
             </div><br/>
-            <input type="email" className="form-control form-control-sm " placeholder="Your  Email Id"/><br/>
-            <input type="password" className="form-control form-control-sm " placeholder="Password"/><br/>
+            <input type="email" className="form-control form-control-sm " placeholder="Your  Email Id" required/><br/>
+            <input type="password" className="form-control form-control-sm " placeholder="Password" required/><br/>
             <input type="password"className="form-control form-control-sm " placeholder="Confirm Password" />
             <input type="button" className="btn btn-sm btn-student text-white  mt-4 w-100" value="Sign Up"/>
   
