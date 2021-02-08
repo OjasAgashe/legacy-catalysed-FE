@@ -22,7 +22,7 @@ const OrganizationRegistration = () => {
             <input type="email" className="form-control form-control-sm " placeholder="Your Official Email Id"required/><br/>
             <input type="password" className="form-control form-control-sm " placeholder="Password"required/><br/>
             <input type="password"className="form-control form-control-sm " placeholder="Confirm Password"required />
-            <input type="button" onClick={onGoingNext} className="btn btn-success mt-4 w-100" value="Register now"/>
+            <input type="submit" onClick={onGoingNext} className="btn btn-success mt-4 w-100" value="Register now"/>
   
         </form>
         <p className="mt-3">Do you have an account?  <span  className="text-primary login-click"><u>Click here to login</u></span> </p>
