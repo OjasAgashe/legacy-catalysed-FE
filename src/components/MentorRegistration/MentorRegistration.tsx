@@ -9,7 +9,7 @@ const MentorRegistration = () => {
         <form className=" container  mt-4" >
             <div className="d-flex ">
             <input type="text" className="form-control form-control-sm first-name " placeholder="First Name"/> &nbsp;<br/>
-            <input type="text" className="form-control form-control-sm last-name" placeholder="Last Name"/>
+            <input type="text" className="form-control form-control-sm last-name overflow-hidden" placeholder="Last Name"/>
             </div><br/>
             <input type="email" className="form-control form-control-sm " placeholder="Your  Email Id"/><br/>
             <input type="password" className="form-control form-control-sm " placeholder="Password"/><br/>
