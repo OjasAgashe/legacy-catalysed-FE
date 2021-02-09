@@ -15,8 +15,8 @@ const OrganizationRegistration = () => {
             <div className="organization-registration-container container-fluid  my-auto bg-white">
             <h1>Create an account</h1> 
         <form className=" container  mt-4" >
-            <div className="d-flex container">
-            <input type="text" className="form-control form-control-sm first-name " placeholder="First Name"required/> &nbsp;<br/>
+            <div className="d-flex   ">
+            <input type="text" className="form-control form-control-sm first-name overflow-hidden " placeholder="First Name"required/> &nbsp;<br/>
             <input type="text" className="form-control form-control-sm last-name  overflow-hidden " placeholder="Last Name"required/>
             </div><br/>
             <input type="email" className="form-control form-control-sm " placeholder="Your Official Email Id"required/><br/>
