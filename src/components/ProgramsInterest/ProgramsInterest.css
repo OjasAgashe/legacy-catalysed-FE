@@ -1,0 +1,24 @@
+.programs-interest-background{
+    background-color: #fff099;
+}
+.programs-interest-title{
+    font-family: playfair display,serif;
+    letter-spacing: 0.19em;
+    font-size:42px;
+    font-weight: 900px;
+    color: #0D0D0D;
+     vertical-align: baseline;
+     background: transparent;
+ }
+
+.programs-interest-description{
+    font-family: avenir-lt-w01_35-light1475496,sans-serif;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+    font-weight: 200;
+ }

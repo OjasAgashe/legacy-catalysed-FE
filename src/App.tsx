@@ -12,6 +12,7 @@ import OrganizationDetail from './components/OrganizationDetail/OrganizationDeta
 import StudentRegistration from './components/StudentRegistration/StudentRegistration';
 import MentorRegistration from './components/MentorRegistration/MentorRegistration';
 import NotFound from './components/NotFound/NotFound';
+import Homepage from './components/HomePage/Homepage';
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
         </Route>
        
         <Route exact path="/">
-       <OrganizationRegistration/>
+       <Homepage/>
         </Route>
         <Route exact path="*">
        <NotFound/>

@@ -10,6 +10,7 @@
 
 # production
 /build
+NavHome/
 
 # misc
 .DS_Store
