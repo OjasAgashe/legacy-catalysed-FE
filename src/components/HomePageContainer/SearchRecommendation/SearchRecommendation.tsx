@@ -1,6 +1,6 @@
 import React from 'react';
 import './SearchRecommendation.css'
-import tv from '../../images/tv.png'
+import tv from '../../../images/tv.png'
 const SearchRecommendation = () => {
     return (
         <>

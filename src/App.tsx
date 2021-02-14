@@ -12,7 +12,8 @@ import OrganizationDetail from './components/OrganizationDetail/OrganizationDeta
 import StudentRegistration from './components/StudentRegistration/StudentRegistration';
 import MentorRegistration from './components/MentorRegistration/MentorRegistration';
 import NotFound from './components/NotFound/NotFound';
-import Homepage from './components/HomePage/Homepage';
+
+import HomepageContainer from './components/HomePageContainer/HomepageContainer';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
         </Route>
        
         <Route exact path="/">
-       <Homepage/>
+       <HomepageContainer/>
         </Route>
         <Route exact path="*">
        <NotFound/>

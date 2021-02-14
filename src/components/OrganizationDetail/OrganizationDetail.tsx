@@ -10,7 +10,7 @@ const OrganizationDetail = () => {
             <textarea name="" className="form-control mt-3 mb-3 organization-detail-textarea" id="" cols={5} rows={5}  placeholder="Write about your organization  *"/>
             <input type="url" className="form-control mt-2 organization-detail-input form-control-sm " placeholder="Social Media Page"/>
             <input type="url" className="form-control mt-2 organization-detail-input form-control-sm " placeholder="Organization Website" /><br/>
-            <h3><u>Guidelines</u></h3>
+   
           
        
       

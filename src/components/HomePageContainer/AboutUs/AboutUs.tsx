@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutUs.css';
-import girl from '../../images/girl.png';
-import boy from'../../images/boy.png'
+import girl from '../../../images/girl.png';
+import boy from'../../../images/boy.png'
 const AboutUs = () => {
     return (
         <>

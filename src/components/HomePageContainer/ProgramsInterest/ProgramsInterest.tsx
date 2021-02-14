@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProgramsInterest.css'
-import building from '../../images/building.png'
+import building from '../../../images/building.png'
 const ProgramsInterest = () => {
     return (
         <>

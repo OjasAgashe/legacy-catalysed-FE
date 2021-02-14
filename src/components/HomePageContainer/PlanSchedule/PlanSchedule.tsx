@@ -1,6 +1,6 @@
 import React from 'react';
 import './PlanSchedule.css';
-import  calendar from '../../images/calendar.png'
+import  calendar from '../../../images/calendar.png'
 const PlanSchedule = () => {
     return (
         <>

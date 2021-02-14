@@ -1,6 +1,6 @@
 import React from 'react';
 import './PersonalizedProfile.css';
-import rabbit from '../../images/rabbit.png'
+import rabbit from '../../../images/rabbit.png'
 const PersonalizedProfile = () => {
     return (
         <>

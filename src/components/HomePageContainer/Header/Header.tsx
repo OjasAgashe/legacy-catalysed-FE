@@ -1,9 +1,12 @@
 import React from 'react';
-import './NavHeader.css';
-import logo from '../../images/logo.png'
-const NavHeader = () => {
+import './Header.css';
+import logo from '../../../images/logo.png'
+
+const Header = () => {
+
+
     return (
-        <>
+        
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
   <img src={logo} className="logo"/>
@@ -40,10 +43,10 @@ const NavHeader = () => {
             Register
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item " href="#"> As an organizer</a></li>
-            <li><a className="dropdown-item" href="#">As a mentor </a></li>
+            <li><a className="dropdown-item text-center" href="/organizer">Organizer</a></li>
+            <li><a className="dropdown-item text-center" href="/mentor">Mentor </a></li>
            
-            <li><a className="dropdown-item" href="#">As a student</a></li>
+            <li><a className="dropdown-item text-center" href="/student">Student</a></li>
           </ul>
         </li>
         <button className="btn btn-outline-success me-2" type="submit">Login</button>
@@ -51,8 +54,8 @@ const NavHeader = () => {
     </div>
   </div>
 </nav>
-        </>
+       
     );
 };
 
-export default NavHeader;
+export default Header;
