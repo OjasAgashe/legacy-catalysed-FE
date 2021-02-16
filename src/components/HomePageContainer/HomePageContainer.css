@@ -2,10 +2,13 @@
 
   width:100vw;
  overflow-x: hidden;
- display:inherit;
+ 
   height:100%;
 }
-
+.about-us-background{
+  background-color:  #fcf8ed;
+  
+}
 
 
 

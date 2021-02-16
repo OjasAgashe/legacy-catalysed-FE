@@ -14,12 +14,12 @@
 }
 .personalized-profile-description{
    font-family: avenir-lt-w01_35-light1475496,sans-serif;
-   font-size: 22px;
-   font-weight: -10;
-   margin: 0;
+   font-size: 20px;
+  
+   /* margin: 0;
    padding: 0;
    border: 0;
-   outline: 0;
+   outline: 0; */
    vertical-align: baseline;
    background: transparent;
 }
