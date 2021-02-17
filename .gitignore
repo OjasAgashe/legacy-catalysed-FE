@@ -10,10 +10,17 @@
 
 # production
 /build
+/NavHome
 CatalysedTitle/
 MissionVision/
+AboutUs/
+ProgramsInterest/
+PlanSchedule/
+
 PersonalizedProfile/
-NavHome/
+
+SearchRecommendation/
+
 
 #files
 

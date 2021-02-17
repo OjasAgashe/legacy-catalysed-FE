@@ -2,13 +2,7 @@ import React from 'react';
 
 import './HomePageContainer.css'
 
-import PlanSchedule from './PlanSchedule/PlanSchedule';
-import ProgramsInterest from './ProgramsInterest/ProgramsInterest';
-import SearchRecommendation from './SearchRecommendation/SearchRecommendation';
-import PersonalizedProfile from './PersonalizedProfile/PersonalizedProfile';
-import MissionVision from './MissionVision/MissionVision';
-import AboutUs from './AboutUs/AboutUs';
-import CatalysedTitle from './CatalysedTitle/CatalysedTitle';
+
 
 import girl from '../../images/girl.png';
 import boy from '../../images/boy.png';
