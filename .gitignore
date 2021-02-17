@@ -10,7 +10,12 @@
 
 # production
 /build
+CatalysedTitle/
+MissionVision/
+PersonalizedProfile/
+NavHome/
 
+#files
 
 # misc
 .DS_Store
