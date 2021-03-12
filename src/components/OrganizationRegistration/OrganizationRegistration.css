@@ -9,7 +9,7 @@
     height:400px;
   
 }
-.form-control{
+.organization-registration-form-control{
     border:none;
     border-bottom: 1px solid gray;
   }
@@ -26,7 +26,7 @@
         width:95%;
         height:auto
     }
-    .form-control{
+    .organization-registration-form-control{
         border:none;
         border-bottom: 1px solid gray;
       }

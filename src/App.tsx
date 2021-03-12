@@ -14,6 +14,7 @@ import MentorRegistration from './components/MentorRegistration/MentorRegistrati
 import NotFound from './components/NotFound/NotFound';
 
 import HomepageContainer from './components/HomePageContainer/HomepageContainer';
+import CreateProgram from './components/CreateProgram/CreateProgram';
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
         </Route>
        
         <Route exact path="/">
-       <HomepageContainer/>
+      <CreateProgram/>
         </Route>
         <Route exact path="*">
        <NotFound/>

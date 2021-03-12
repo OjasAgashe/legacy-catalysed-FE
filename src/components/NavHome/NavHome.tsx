@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Drawer, Button, List, ListItem, ListItemText, ListItemIcon } from '@material-ui/core';
+import { BsList } from "react-icons/bs";
+
 
 const NavHome = () => {
+
+  const [openDrawer,setOpenDrawer]=useState<any>(true)
     return (
         <>
-        <ul className="nav justify-content-center">
+        {/* <ul className="nav justify-content-center">
   <li className="nav-item">
     <a className="nav-link active" aria-current="page" href="#">Active</a>
   </li>
@@ -16,7 +21,7 @@ const NavHome = () => {
   <li className="nav-item">
     <a className="nav-link disabled" href="#"aria-disabled="true">Disabled</a>
   </li>
-</ul>
+</ul> */}
            {/* <nav classNameName="navbar navbar-expand-lg navbar-light ">
      
         <button classNameName="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,6 +69,46 @@ const NavHome = () => {
        
         </div>
       </nav>   */}
+<BsList onClick={()=>setOpenDrawer(true)}/>
+<Drawer
+anchor="right"
+onClose={()=>setOpenDrawer(false)}
+open={openDrawer}>
+  
+  <List>
+    <ListItem button>
+      <ListItemIcon>
+      <ListItemText>
+        Courses
+      </ListItemText>
+      </ListItemIcon>
+    </ListItem>
+
+    <ListItem button>
+      <ListItemIcon>
+      <ListItemText>
+        Courses
+      </ListItemText>
+      </ListItemIcon>
+    </ListItem>
+
+    <ListItem button>
+      <ListItemIcon>
+      <ListItemText>
+        Courses
+      </ListItemText>
+      </ListItemIcon>
+    </ListItem>
+
+    <ListItem button>
+      <ListItemIcon>
+      <ListItemText>
+        Courses
+      </ListItemText>
+      </ListItemIcon>
+    </ListItem>
+  </List>
+</Drawer>
         </>
     );
 };

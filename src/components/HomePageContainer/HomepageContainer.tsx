@@ -9,11 +9,12 @@ import building from '../../images/building.png';
 import calendar from '../../images/calendar.png';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import NavHome from '../NavHome/NavHome';
 
 const HomepageContainer = () => {
     return (
         <div className="home-page-container d-block ">
-          <Header/>
+       <NavHome/>
           {/* <CatalysedTitle/> */}
           <div className=" text-center catalysed-background container-fluid w-100  p-0">
                   <span className="catalysed-title text-center container">CATALYSED</span>
@@ -56,7 +57,7 @@ const HomepageContainer = () => {
           {/* <PersonalizedProfile/> */}
           <div className="row personalized-profile w-100 ">
             <div className="col-md-4  p-0">
-                <img src={rabbit} className="w-100 h-100 p-0"/>
+                <img src={rabbit} className=" p-0"/>
             </div>
             <div className="col-md-8 align-items-center d-flex personalized-profile-background   justify-content-center ">
             <div className="">
