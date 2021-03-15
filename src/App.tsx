@@ -15,6 +15,7 @@ import NotFound from './components/NotFound/NotFound';
 
 import HomepageContainer from './components/HomePageContainer/HomepageContainer';
 import CreateProgram from './components/CreateProgram/CreateProgram';
+import Login from './components/Login/Login';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
         </Route>
        
         <Route exact path="/">
-      <CreateProgram/>
+      <Login/>
         </Route>
         <Route exact path="*">
        <NotFound/>

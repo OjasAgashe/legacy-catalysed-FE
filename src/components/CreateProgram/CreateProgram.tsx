@@ -33,19 +33,19 @@ const CreateProgram = () => {
   
       </div>
 
-       <div className="d-flex justify-content-start">
+       <div className="d-flex justify-content-start mt-3">
         <div className="w-100">
     <p className=" text-start m-0"> <label >Description</label></p>
     <textarea className="form-control w-100" rows={5}  placeholder="Description *"  required/>
        </div>
 
        </div>
-       <div className="d-flex ">
+       <div className="d-flex mt-3">
          
-       <div className=" d-flex  ">
-<div className="text-start">
- <div className="d-flex justify-content-start container mt-2">
- <div className=" tentative-date-container">
+       
+
+ <div className="d-flex justify-content-start   ">
+ <div className=" tentative-date-container me-4">
  
  <p className=" text-start m-0 "> <label >Tentative Start Date:</label></p>
  <div className="react-date-picker rounded  mt-1  ">
@@ -63,15 +63,15 @@ const CreateProgram = () => {
          
         </div>
    </div>
-   </div>  
+  
         
 
   
-      </div>
+     
        </div>
-       <div className="d-flex justify-content-start">
+       <div className="d-flex justify-content-start ">
          <div className="d-flex justify-content-between">
-         <div className="">
+         <div className="me-3">
          <p className=" text-start m-0"> <label >Virtual</label></p>
        <input type="radio" id="male" className="form-check-input" name="gender" value="Virtual" required/>
          </div>
@@ -85,33 +85,48 @@ const CreateProgram = () => {
        
  
        </div>
-       <div className=" d-flex justify-content-start">
+       <div className=" d-flex justify-content-start mt-2">
            <div className=" ">
  
     <p className=" text-start m-0"> <label >Language requirements</label>
-    <i className="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Language requirements"></i>
+    <i className="fas fa-info-circle ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Language requirements"></i>
 </p>
   <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Language requirements" required/>
            </div>
 
   
    </div>
-  <div className="mt-1">
-  <p className="text-center w-50 m-0"> <label >Age Limit</label></p>
-
-    <div className="d-flex w-50 ">
-      <div>
-        <p className="m-0 text-center">from</p>
-      <input type="number" className=" age-limit-1  w-75  form-control" id="formGroupExampleInput" min="0" placeholder="" required/>
-      </div>
-    -
-    <div>
-      <p className="m-0">upto</p>
-    <input type="number" className=" age-limit-2 w-75 form-control " id="formGroupExampleInput" placeholder="" min="0" required/>
+  <div className="mt-3 d-flex">
+    <div className="d-flex">
+    <p className="text-center  m-0"> <label >Age Limit </label></p>
+    <span  className="ms-2">:</span>
     </div>
+ 
+    <div className="d-flex ms-1 w-50  my-auto ">
+      <div className="d-flex" >
+        <div>
+        <p className=" text-center me-2">from</p>
+        </div>
+        <div>
+        <input type="number" className=" age-limit-1  w-75  form-control" id="formGroupExampleInput" min="0" placeholder="" required/>
+        </div>
+    
+      </div>
+   <span className="me-3">-</span> 
+    <div className="d-flex">
+      <div>
+      <p className="me-2">upto</p>
+      </div>
+      <div>
+      <input type="number" className=" age-limit-2 w-75 form-control " id="formGroupExampleInput" placeholder="" min="0" required/>
+      </div>
+  
     
     </div>
+     </div>
     </div>
+
+
    </div>
  </div>
   <div className="col-md-5 bg-light m-auto d-flex justify-content-center  card card-create-program  mt-1">
@@ -119,7 +134,7 @@ const CreateProgram = () => {
    <div className="card-body d-flex justify-content-center align-items-center">
      <div>
 
-   <div className=" d-flex justify-content-center ">
+   <div className=" d-flex justify-content-center pt-2 ">
     <div className="w-100 ">
 
     <p className=" text-start m-0"> <label >Program Link</label></p>
@@ -128,7 +143,7 @@ const CreateProgram = () => {
    </div>
    
 
-   <h5 className="mt-2">Co-ordinator details</h5>
+   <h5 className="mt-4">Co-ordinator details</h5>
 
    <div className=" d-flex justify-content-center">
     <div className=" w-100">
@@ -138,19 +153,19 @@ const CreateProgram = () => {
     </div>
    </div>
 
-   <div className=" d-flex justify-content-center">
+   <div className=" d-flex mt-2 justify-content-center">
     <div className="w-100 ">
 
     <p className=" text-start m-0"> <label >Email</label></p>
     <input type="email" className="form-control  w-100" id="formGroupExampleInput" placeholder="Email" required/>
     </div>
    </div>
-   <div className=" d-flex justify-content-center">
+   <div className=" d-flex justify-content-center mt-2 pb-3">
     <div className="phone-container ">
 
     <p className=" text-start m-0"> <label >Phone</label></p>
     <div className="d-flex ">
-    <input type="tel" className=" phone-1st w-25 form-control " id="formGroupExampleInput" placeholder="" required/>-
+    <input type="tel" className=" phone-1st w-25 form-control " id="formGroupExampleInput" placeholder="" required/><span className="mt-1">-</span>
     <input type="tel" className="form-control w-75" id="formGroupExampleInput" placeholder="" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required/>
     </div>
    
@@ -199,7 +214,7 @@ const CreateProgram = () => {
            
             </div>
     </Collapsible> */}
-    {/* <Collapsible className="container bg-light mt-2" open={true}overflowWhenOpen="visible" openedClassName="container bg-light  pb-2 mt-2 " triggerTagName="div"triggerWhenOpen={<h4 className="text-start "> ^ Student Fields<span className="bg-secondary text-white"><i className="fas fa-info-circle"></i>(This field is only visible for students)</span></h4>} trigger={<h4 className="text-start "> <b>&gt;</b> Student Fields<span className="bg-secondary text-white "><i className="fas fa-info-circle"></i>(This field is only visible for students)</span></h4>} 
+    <Collapsible className="container bg-light mt-2 collapsible" open={true}overflowWhenOpen="visible" openedClassName="container collapsible bg-light  pb-2 mt-2 " triggerTagName="div"triggerWhenOpen={<p className="text-start mt-3"> <b>^ </b>Student Fields &nbsp;<span className="bg-secondary text-white"><i className="fas fa-info-circle"></i>(This field is only visible for students)</span></p>} trigger={<p className="text-start mt-3 "> <b className="sign-left">&gt;</b> Student Fields &nbsp;<span className="bg-secondary text-white "><i className="fas fa-info-circle"></i>(This field is only visible for students)</span></p>} 
              >
               <div className="bg-white p-2">
       <div className=" d-flex justify-content-start ">
@@ -209,7 +224,7 @@ const CreateProgram = () => {
     <input type="text" className="w-100 form-control " id="formGroupExampleInput" placeholder="Skills" required/>
     </div>
    </div>
-   <div className="d-flex justify-content-start">
+   <div className="d-flex justify-content-start mt-2">
    <div className=" w-25">
              
              <p className=" text-start m-0"> <label >Number of openings:</label></p>
@@ -225,7 +240,7 @@ const CreateProgram = () => {
              <div className="d-flex">
              <div className="d-flex">
                <input type="checkbox" checked={paidProgram} onChange={()=>setPaidProgram(!paidProgram)} className="mt-1 form-check-input" required/>
-               <p>Is paid program?</p>
+               <p className="ms-1">Is paid program?</p>
              </div> &nbsp;&nbsp;
             
                {
@@ -248,7 +263,7 @@ const CreateProgram = () => {
              </div>
              
            
-            <div className="d-flex justify-content-start">
+            <div className="d-flex justify-content-start mt-3">
               <div className="w-100 text-start">
               <p className="m-0">General Instructions </p>
              <textarea name="" className="form-control " id="" cols={3} rows={3}  placeholder="General Instructions*"required/>
@@ -257,7 +272,7 @@ const CreateProgram = () => {
             </div>
             </div>
 
-               </Collapsible> */}
+               </Collapsible>
 
                <div className="accordion container  mt-3 mb-3" id="accordionExample">
   <div className="accordion-item">
