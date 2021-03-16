@@ -16,6 +16,7 @@ import NotFound from './components/NotFound/NotFound';
 import HomepageContainer from './components/HomePageContainer/HomepageContainer';
 import CreateProgram from './components/CreateProgram/CreateProgram';
 import Login from './components/Login/Login';
+import Welcome from './components/Welcome/Welcome';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path="/mentor">
          <MentorRegistration/>
+        </Route>
+        <Route path="/welcome">
+          <Welcome/>
         </Route>
        
         <Route exact path="/">
