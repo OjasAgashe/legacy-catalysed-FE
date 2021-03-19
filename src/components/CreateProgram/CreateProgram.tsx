@@ -6,11 +6,8 @@ import DatePicker from 'react-date-picker';
 import { Interface } from 'readline';
 import Header from '../Header/Header';
 import  './CreateProgram.css';
-interface IProps{
-  props: any;
-}
 
-const CreateProgram:FC =()=> {
+const CreateProgram =()=> {
   
   const [date, setDate] = useState<any>();
   const[studentDate,setStudentDate]=useState<any>()
