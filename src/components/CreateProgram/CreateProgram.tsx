@@ -1,13 +1,17 @@
 
 import { close } from 'inspector';
-import React, { useState } from 'react';
+import React, { FC,  SFC, useContext, useState } from 'react';
 import Collapsible from 'react-collapsible';
 import DatePicker from 'react-date-picker';
+import { Interface } from 'readline';
 import Header from '../Header/Header';
 import  './CreateProgram.css';
+interface IProps{
+  props: any;
+}
 
-
-const CreateProgram = () => {
+const CreateProgram:FC =()=> {
+  
   const [date, setDate] = useState<any>();
   const[studentDate,setStudentDate]=useState<any>()
   const[mentorDate,setMentorDate]=useState<any>()
@@ -15,7 +19,7 @@ const CreateProgram = () => {
   const[paidProgram,setPaidProgram]=useState<any>(false);
     return (
       <>
-          <Header/>
+   <Header  />
           <h1 className="text-center"><u>Create Program</u></h1>
          <form>
         <div className="row ">
@@ -98,24 +102,24 @@ const CreateProgram = () => {
    </div>
   <div className="mt-3 d-flex">
     <div className="d-flex">
-    <p className="text-center  m-0"> <label >Age Limit </label></p>
-    <span  className="ms-2">:</span>
+    <p className="text-center  mt-4"> <label >Age Limit </label></p>
+    <span  className="ms-2 mt-4">:</span>
     </div>
  
-    <div className="d-flex ms-1 w-50  my-auto ">
-      <div className="d-flex" >
-        <div>
-        <p className=" text-center me-2">from</p>
+    <div className="d-flex ms-2 w-50  my-auto ">
+      <div className="mb-2" >
+        <div className="">
+        <p className=" text-center m-0 me-2">From</p>
         </div>
-        <div>
+        <div className="">
         <input type="number" className=" age-limit-1  w-75  form-control" id="formGroupExampleInput" min="0" placeholder="" required/>
         </div>
     
       </div>
-   <span className="me-3">-</span> 
-    <div className="d-flex">
+   <span className="me-3 mt-4">-</span> 
+    <div className="">
       <div>
-      <p className="me-2">upto</p>
+      <p className="me-2 m-0">To</p>
       </div>
       <div>
       <input type="number" className=" age-limit-2 w-75 form-control " id="formGroupExampleInput" placeholder="" min="0" required/>
@@ -179,11 +183,11 @@ const CreateProgram = () => {
         </div>
         
   
-
-
-             {/* <Collapsible className="container mb-3" openedClassName="container" triggerTagName="div" triggerStyle={{background:'green',color:'white'}} trigger="Mentor Fields(This field is only visible for mentors) " 
+    <div className="ms-5">
+            
+             <Collapsible className="container w-auto  collapsible-student-field bg-light mt-2 pb-2 w-100 h-auto collapsible" open={true}overflowWhenOpen="visible" openedClassName="container  collapsible-student-field   collapsible bg-light pb-2  mt-2 " triggerTagName="div"triggerWhenOpen={<p className="text-start mt-3"> <b>^ </b>Mentor Fields &nbsp;<span className="bg-secondary text-white"><i className="fas fa-info-circle"></i>(This field is only visible for mentors)</span></p>} trigger={<p className="text-start mt-3 "> <b className="sign-left">&gt;</b> Mentor Fields &nbsp;<span className="bg-secondary text-white "><i className="fas fa-info-circle"></i>(This field is only visible for mentors)</span></p>} 
              >
-           <div className=" d-flex justify-content-center">
+           {/* <div className=" d-flex justify-content-center">
     <div className=" ">
 
     <p className=" text-start m-0"> <label >Skills/Subject requirements</label></p>
@@ -200,7 +204,7 @@ const CreateProgram = () => {
                     <div className="  ">
  
     <p className=" text-start m-0"> <label >Application End Date:</label></p>
-    <DatePicker clearIcon={null} value={value} className="" onChange={setValue} format="dd-MM-y"dayPlaceholder="day" monthPlaceholder="month"  yearPlaceholder="year" required={true}/>
+    <DatePicker clearIcon={null} value={mentorDate} className="" onChange={setMentorDate} format="dd-MM-y"dayPlaceholder="day" monthPlaceholder="month"  yearPlaceholder="year" required={true}/>
            </div> 
    </div>
              
@@ -212,9 +216,44 @@ const CreateProgram = () => {
              <textarea name="" className="w-75 form-control" id="" cols={3} rows={3}  placeholder="Instructions*"/>
               </div>
            
+            </div> */}
+<div className="bg-white p-2">
+<div className=" d-flex justify-content-start">
+    <div className=" ">
+
+    <p className=" text-start m-0"> <label >Skills/Subject requirements</label></p>
+    <input type="text" className="w-100 form-control" id="formGroupExampleInput" placeholder="Skills" required/>
+    </div>
+   </div>
+   <div className="d-flex justify-content-start mt-3">
+   <div className=" w-25  ">
+             
+             <p className=" text-start m-0"> <label >Number of openings:</label></p>
+                      <input type="number" className="w-25 form-control"  min="0"required/>
+                   
+                    </div>    
+                    <div className="  ">
+ 
+    <p className=" text-start m-0"> <label >Application End Date:</label></p>
+    <DatePicker clearIcon={null} value={mentorDate} className="" onChange={setMentorDate} format="dd-MM-y"dayPlaceholder="day" monthPlaceholder="month"  yearPlaceholder="year" required={true}/>
+           </div> 
+   </div>
+             
+             
+           
+            <div className="d-flex  justify-content-start">
+              <div className="w-100 text-start">
+              <p className="m-0">Instructions </p>
+             <textarea name="" className="w-100 form-control" id="" cols={3} rows={3}  placeholder="Instructions*" required/>
+              </div>
+           
             </div>
-    </Collapsible> */}
-    <Collapsible className="container bg-light mt-2 collapsible" open={true}overflowWhenOpen="visible" openedClassName="container collapsible bg-light  pb-2 mt-2 " triggerTagName="div"triggerWhenOpen={<p className="text-start mt-3"> <b>^ </b>Student Fields &nbsp;<span className="bg-secondary text-white"><i className="fas fa-info-circle"></i>(This field is only visible for students)</span></p>} trigger={<p className="text-start mt-3 "> <b className="sign-left">&gt;</b> Student Fields &nbsp;<span className="bg-secondary text-white "><i className="fas fa-info-circle"></i>(This field is only visible for students)</span></p>} 
+            </div>
+    </Collapsible>
+
+    </div>
+    <div className="ms-5">
+    <Collapsible className="container collapsible-student-field bg-light mt-2  collapsible" open={true}overflowWhenOpen="visible" openedClassName="container  collapsible-student-field  collapsible bg-light  pb-2 mt-2 " triggerTagName="div"triggerWhenOpen={<p className="text-start mt-3"> <b>^ </b>Student Fields &nbsp;<span className="bg-secondary text-white"><i className="fas fa-info-circle"></i>(This field is only visible for students)</span></p>} trigger={<p className="text-start mt-3 "> <b className="sign-left">&gt;</b> Student Fields &nbsp;<span className="bg-secondary text-white "><i className="fas fa-info-circle"></i>(This field is only visible for students)</span></p>} 
              >
               <div className="bg-white p-2">
       <div className=" d-flex justify-content-start ">
@@ -273,8 +312,8 @@ const CreateProgram = () => {
             </div>
 
                </Collapsible>
-
-               <div className="accordion container  mt-3 mb-3" id="accordionExample">
+</div>
+               {/* <div className="accordion container  mt-3 mb-3" id="accordionExample">
   <div className="accordion-item">
     <h2 className="accordion-header d-flex justify-content-center " id="headingOne" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
       <button className="accordion-button bg-light collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
@@ -318,9 +357,9 @@ const CreateProgram = () => {
       </div>
     </div>
     </div>
-    </div>
+    </div> */}
 
-    <div className=" accordion  container mb-3" id="accordionExample2">
+    {/* <div className=" accordion  container mb-3" id="accordionExample2">
       <div className="accordion-item">
        <h2 className="accordion-header d-flex justify-content-center " id="heading" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
         <button className="accordion-button bg-light collapsed"  data-bs-toggle="collapse"  data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -394,7 +433,7 @@ const CreateProgram = () => {
       </div>
     </div>
     </div>
-    </div>
+    </div> */}
     </form>
         </>
     );

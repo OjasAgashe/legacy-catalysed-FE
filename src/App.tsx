@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState ,FC} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {
@@ -18,9 +18,12 @@ import CreateProgram from './components/CreateProgram/CreateProgram';
 import Login from './components/Login/Login';
 import Welcome from './components/Welcome/Welcome';
 
-function App() {
+const  App:FC=()=> {
+
+ 
   return (
     <div className="App">
+
       <Router>
         <Switch>
         <Route path="/organizer">
@@ -38,7 +41,15 @@ function App() {
         <Route path="/welcome">
           <Welcome/>
         </Route>
-       
+        <Route path="/homepage">
+          <HomepageContainer/>
+        </Route>
+        <Route path="/createProgram">
+          <CreateProgram  />
+        </Route>
+        <Route path="/login">
+          <Login/>
+        </Route>
         <Route exact path="/">
       <Login/>
         </Route>
@@ -47,7 +58,7 @@ function App() {
         </Route>
         </Switch>
       </Router>
-  
+     
     </div>
   );
 }

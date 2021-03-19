@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
+import './Login.css';
 import axios from 'axios';
 import { useHistory } from 'react-router';
 interface AxiosRequestConfig {
@@ -6,26 +7,37 @@ interface AxiosRequestConfig {
     password:any;
     headers:any;
     jwt:any;
-    setItem:any;
-    
-  
-   
-  
-}
-
-
-const Login = () => {
+    setItem:any;  
+  }
+const Login :FC= () => {
    const history=useHistory()
-  const[state,setState]=useState(
+  const[userInfo,setUserInfo]=useState(
     {
-        email:'bira@gmail.com',
-         password:'pass'
+        email:'',
+         password:''
      }
   )
-const click=()=>{
+
+
+  
+    const handleBlur=(e:any)=>{
+        if(e.target.name==='email'){
+        const newUserInfo={...userInfo}
+        newUserInfo.email=e.target.value
+        setUserInfo(newUserInfo)
+        }
+        if(e.target.name==='password'){
+            const newUserInfo={...userInfo}
+            newUserInfo.password=e.target.value
+            setUserInfo(newUserInfo)
+        
+        }
+    }
+  
+const click=(r:any)=>{
     axios.post<AxiosRequestConfig>('https://catalysed-iteration1.el.r.appspot.com/authenticate',
   
-  state,
+  userInfo,
           {
               headers:{'Content-Type': 'application/json'}
           }
@@ -59,17 +71,35 @@ const click=()=>{
          
          )
         
-   
+   r.preventDefault()
 }
     
     return (
         <>
-        <form>
-          <input type="email" placeholder="Type your email"/> 
-          <input type="password" placeholder="Type your password"/>
-          
-        </form>
-        <input type="button" value="Submit" onClick={()=>click()}/>
+        <div className="d-flex login-mother-container">
+           <div className="login-form-container my-auto  container-fluid bg-white">
+               <h2 className="text-center">Login to your account</h2>
+             <form onSubmit={click}>
+                   <div className="w-100">
+                   <label className="d-flex justify-content-start">
+                    Email
+                 </label>
+          <input type="email" name="email" className="form-control form-control-sm "
+            placeholder="Type your email"  onBlur={handleBlur} required/> 
+                   </div>
+      <br/> 
+      <div>
+     <label className="d-flex justify-content-start">
+     Password
+     </label>
+    <input type="password" name="password" onBlur={handleBlur} className="form-control form-control-sm" placeholder="Type your password" required/>
+    </div>
+    <input type="submit"  className="btn btn-success btn-sm mt-5 w-100" value="Login"/>
+  </form>
+           </div>
+        </div>
+{/*        
+        <input type="button" value="Submit" onClick={()=>click()}/> */}
         </>
     );
 };

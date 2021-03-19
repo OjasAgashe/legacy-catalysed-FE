@@ -1,7 +1,10 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 import './StudentRegistration.css'
 
 const StudentRegistration = () => {
+
+    const history=useHistory()
     return (
         <>
               <div  className="d-flex justify-content-center organization-registration-mother-container " >
@@ -18,7 +21,7 @@ const StudentRegistration = () => {
             <input type="submit" className="btn btn-sm btn-student text-white  mt-4 w-100" value="Sign Up"/>
   
         </form>
-        <p className="mt-3">Do you have an account?  <span  className="text-primary login-click"><u>Click here to login</u></span> </p>
+        <p className="mt-3">Do you have an account?  <span  className="text-primary login-click" onClick={()=>{history.push('/login')}} ><u>Click here to login</u></span> </p>
      
         </div>  
         </div>   

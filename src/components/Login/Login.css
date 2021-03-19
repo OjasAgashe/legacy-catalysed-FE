@@ -1,0 +1,26 @@
+.login-mother-container{
+
+    background-image: linear-gradient(90deg, #19d3ae,#0fcfec);
+    height:100vh;
+    width:100vw;
+}
+.login-form-container{
+   width:370px;
+   height:300px; 
+}
+
+@media (max-height:297px){
+    .login-mother-container{
+        background-image: linear-gradient(90deg, #19d3ae,#0fcfec);
+       height:100%;
+       width:100vw;
+    }
+      }
+
+      @media(max-width:370px){
+        .login-form-container{
+            width:95%;
+            height:310px;
+
+        }
+        }

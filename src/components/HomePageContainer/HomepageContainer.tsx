@@ -12,9 +12,12 @@ import Footer from '../Footer/Footer';
 import NavHome from '../NavHome/NavHome';
 
 const HomepageContainer = () => {
+
+
+    
     return (
         <div className="home-page-container d-block ">
-       <NavHome/>
+       <Header/>
           {/* <CatalysedTitle/> */}
           <div className=" text-center catalysed-background container-fluid w-100  p-0">
                   <span className="catalysed-title text-center container">CATALYSED</span>

@@ -4,7 +4,7 @@ import './OrganizationRegistration.css'
 
 const OrganizationRegistration = () => {
 
-    const history= useHistory<any>()
+    const history= useHistory()
 
     const onGoingNext=()=>{
         history.push('/organizationDetail')
@@ -25,7 +25,7 @@ const OrganizationRegistration = () => {
             <input type="submit" className="btn btn-success mt-4 w-100" value="Register now"/>
   
         </form>
-        <p className="mt-3">Do you have an account?  <span  className="text-primary login-click"><u>Click here to login</u></span> </p>
+        <p className="mt-3">Do you have an account?  <span  className="text-primary login-click"  onClick={()=>{history.push('/login')}} ><u>Click here to login</u></span> </p>
      
         </div>  
         </div>   

@@ -1,10 +1,11 @@
-.site-drawer-render-in-current-wrapper {
-    position: relative;
-    height: 200px;
-    padding: 48px;
-    overflow: hidden;
-    text-align: center;
-    background: #fafafa;
-    border: 1px solid #ebedf0;
-    border-radius: 2px;
+
+ .drawer-control{
+  background: #b9a9a2 !important;
+ }
+ 
+ @media(min-width:991px){
+  .drawer-control{
+    display:none !important;
+    
   }
+ }

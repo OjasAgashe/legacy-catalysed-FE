@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { FC, useState } from 'react';
 import './Header.css';
 import logo from '../../images/logo.png'
+import { useHistory } from 'react-router';
+import NavHome from '../NavHome/NavHome';
 
-const Header = () => {
-
+const Header :FC= () => {
+const history=useHistory()
+let token= localStorage.getItem('token')
+const[loggedInUser,setLoggedInUser]=useState(true)
 
     return (
-        
+        <>
     <nav className="navbar navbar-expand-lg navbar-light ">
   <div className="container-fluid ">
   <img src={logo} className="logo"/>
@@ -49,12 +53,27 @@ const Header = () => {
             <li><a className="dropdown-item text-center" href="/student">Student</a></li>
           </ul>
         </li>
-        <button className="btn btn-outline-success me-2" type="submit">Login</button>
+        {
+          token  ?
+          <button className="btn btn-outline-danger me-2" onClick={()=>{localStorage.clear();setLoggedInUser(!loggedInUser)}}  type="submit">Log Out</button>
+           :
+          //  <button className="btn btn-outline-success me-2" onClick={()=>{history.push('/login')}} type="submit">Login</button>
+   ''
+        }
+        {
+          loggedInUser?
+          ''
+
+          :
+          <button className="btn btn-outline-success me-2" onClick={()=>{history.push('/login')}} type="submit">Login</button>
+        }
+        
       </div>
     </div>
   </div>
 </nav>
-       
+   <NavHome/>    
+   </>
     );
 };
 

@@ -23,7 +23,8 @@
     width:60px
 }
 .collapsible{
-  border:0.5px solid lightgray
+  border:0.5px solid lightgray;
+  border-radius:5px 5px 5px 5px;
 }
 .phone-1st{
     width:35px;
@@ -31,4 +32,10 @@
 .sign-left{
     font-weight:bold;
 }
+.collapsible-student-field{
+
+    
+    
+}
+
 

@@ -1,11 +1,32 @@
 import React, { useState } from 'react';
-import { Drawer, Button, List, ListItem, ListItemText, ListItemIcon } from '@material-ui/core';
+import { Drawer, Button, List, ListItem, ListItemText, ListItemIcon,Menu ,MenuItem, MenuList} from '@material-ui/core';
 import { BsList } from "react-icons/bs";
-
+import logo from '../../images/logo.png';
+import './NavHome.css'
+import { useHistory } from 'react-router';
 
 const NavHome = () => {
 
-  const [openDrawer,setOpenDrawer]=useState<any>(true)
+  const history=useHistory()
+
+  const [openDrawer,setOpenDrawer]=useState<any>(false)
+  const handleRegisterMenuClose=()=>{
+    setAnchorElRegister(null)
+  }
+  const handleProgramsMenuClose=()=>{
+    setAnchorElPrograms(null)
+  }
+
+  const[anchorElRegister,setAnchorElRegister]=useState(null)
+  const[anchorElPrograms,setAnchorElPrograms]=useState(null)
+
+  const handleOpenMenuRegister=(e:any)=>{
+      setAnchorElRegister(e.currentTarget)
+  }
+
+  const handleOpenMenuPrograms=(e:any)=>{
+    setAnchorElPrograms(e.currentTarget)
+}
     return (
         <>
         {/* <ul className="nav justify-content-center">
@@ -69,46 +90,104 @@ const NavHome = () => {
        
         </div>
       </nav>   */}
-<BsList onClick={()=>setOpenDrawer(true)}/>
+      <div className="d-flex container-fluid drawer-control  justify-content-between">
+      <img src={logo} className="logo logo-sm-img m-0"/>
+      <div className="me-1  bs-list">
+        <div className="bs-list-inner">
+      <BsList fontSize={40} onClick={()=>setOpenDrawer(true)}/>
+      </div>
+
+      </div>
+      </div>
+
 <Drawer
+
 anchor="right"
 onClose={()=>setOpenDrawer(false)}
-open={openDrawer}>
+open={openDrawer}
+>
   
   <List>
-    <ListItem button>
-      <ListItemIcon>
-      <ListItemText>
-        Courses
-      </ListItemText>
-      </ListItemIcon>
-    </ListItem>
 
-    <ListItem button>
+    <ListItem button divider  className="bg-warning">
       <ListItemIcon>
       <ListItemText>
-        Courses
+    
+ Organizations
+ 
+       
       </ListItemText>
       </ListItemIcon>
     </ListItem>
+ 
+   
+   
+     <ListItem button divider onClick={handleOpenMenuPrograms} 
+     aria-controls="menu1" 
+     className="bg-primary"
+    >
+      <ListItemIcon>
+      <ListItemText>
+        
+     Programs
+       
+      
+ </ListItemText>
+      </ListItemIcon>
+    </ListItem>
+    
+      
+   
+    
+ 
 
-    <ListItem button>
+  <ListItem button divider className="bg-primary"  
+  onClick={handleOpenMenuRegister} 
+  aria-controls="menu1" >
       <ListItemIcon>
       <ListItemText>
-        Courses
+        
+      Register
+       
+       
       </ListItemText>
       </ListItemIcon>
     </ListItem>
+ 
+  
 
-    <ListItem button>
+<ListItem button divider 
+className="bg-success"
+ onClick={()=>history.push('/login')}  >
       <ListItemIcon>
       <ListItemText>
-        Courses
+        Login
       </ListItemText>
       </ListItemIcon>
     </ListItem>
+    
   </List>
 </Drawer>
+<Menu className="menu-register mt-5 w-100"
+      id="menu" 
+     anchorEl={anchorElRegister}
+     onClose={handleRegisterMenuClose} 
+     open={Boolean(anchorElRegister)}>
+  <MenuItem onClick={()=>history.push('/student')}>Student</MenuItem>
+  <MenuItem onClick={()=>history.push('/mentor')}>Mentor</MenuItem>
+  <MenuItem onClick={()=>history.push('/organizer')}>Organizer</MenuItem>
+</Menu>
+
+<Menu className="menu-register mt-5 w-100"
+  id="menu1"
+anchorEl={anchorElPrograms}
+ onClose={handleProgramsMenuClose} 
+ open={Boolean(anchorElPrograms)}>
+  <MenuItem>Browse by category</MenuItem>
+  <MenuItem>Browse by organizer</MenuItem>
+  <MenuItem>All programs</MenuItem>
+</Menu>
+
         </>
     );
 };
