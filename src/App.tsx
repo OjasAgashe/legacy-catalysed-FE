@@ -17,13 +17,17 @@ import HomepageContainer from './components/HomePageContainer/HomepageContainer'
 import CreateProgram from './components/CreateProgram/CreateProgram';
 import Login from './components/Login/Login';
 import Welcome from './components/Welcome/Welcome';
-
+import ProgramDetail from './components/ProgramDetail/ProgramDetail';
+import { Flip, ToastContainer } from 'react-toastify';
+import EditProgram from './components/EditProgram/EditProgram';
+export const UserContext=createContext<any>(null||Boolean||String) 
 const  App:FC=()=> {
-
+const[id,setId]=useState()
  
   return (
     <div className="App">
-
+      
+<UserContext.Provider value={{id,setId}}>
       <Router>
         <Switch>
         <Route path="/organizer">
@@ -35,14 +39,20 @@ const  App:FC=()=> {
         <Route path="/student">
          <StudentRegistration/>
         </Route>
+        <Route path="/editProgram/:userId">
+         <EditProgram/>
+        </Route>
         <Route path="/mentor">
          <MentorRegistration/>
         </Route>
         <Route path="/welcome">
           <Welcome/>
         </Route>
-        <Route path="/homepage">
+        <Route path="/homePage">
           <HomepageContainer/>
+        </Route>
+        <Route path="/programDetail">
+          <ProgramDetail/>
         </Route>
         <Route path="/createProgram">
           <CreateProgram  />
@@ -51,14 +61,14 @@ const  App:FC=()=> {
           <Login/>
         </Route>
         <Route exact path="/">
-      <Login/>
+      <CreateProgram/>
         </Route>
         <Route exact path="*">
        <NotFound/>
         </Route>
         </Switch>
       </Router>
-     
+      </UserContext.Provider>
     </div>
   );
 }

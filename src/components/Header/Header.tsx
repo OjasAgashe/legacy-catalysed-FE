@@ -3,11 +3,16 @@ import './Header.css';
 import logo from '../../images/logo.png'
 import { useHistory } from 'react-router';
 import NavHome from '../NavHome/NavHome';
-
+// type Props={
+//   loggedIn:any,
+//   setLoggedIn:any
+// }
 const Header :FC= () => {
 const history=useHistory()
 let token= localStorage.getItem('token')
 const[loggedInUser,setLoggedInUser]=useState(true)
+
+
 
     return (
         <>
@@ -67,7 +72,7 @@ const[loggedInUser,setLoggedInUser]=useState(true)
           :
           <button className="btn btn-outline-success me-2" onClick={()=>{history.push('/login')}} type="submit">Login</button>
         }
-        
+       
       </div>
     </div>
   </div>

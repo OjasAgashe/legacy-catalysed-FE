@@ -1,7 +1,8 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useContext, useState } from 'react';
 import './Login.css';
 import axios from 'axios';
 import { useHistory } from 'react-router';
+import { UserContext } from '../../App';
 interface AxiosRequestConfig {
     email:any;
     password:any;
@@ -9,7 +10,10 @@ interface AxiosRequestConfig {
     jwt:any;
     setItem:any;  
   }
+
 const Login :FC= () => {
+
+    
    const history=useHistory()
   const[userInfo,setUserInfo]=useState(
     {
@@ -52,7 +56,7 @@ const click=(r:any)=>{
         if(res.status=== 200){
             localStorage.setItem('token',`${res.data.jwt}`)
             history.push('/welcome')
-            
+        
            
         }
     
