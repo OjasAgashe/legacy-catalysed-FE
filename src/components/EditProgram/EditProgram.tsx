@@ -278,7 +278,7 @@ const EditProgram = () => {
                  <div className="  ">
 
  <p className=" text-start m-0"> <label >Application End Date:</label></p>
- {/* <DatePicker clearIcon={null}  className=""   name="applyByMentor" value={defaultMentorDate} format="dd-MM-y"dayPlaceholder="day" monthPlaceholder="month"  yearPlaceholder="year" required={true}/> */}
+ <DatePicker clearIcon={null}  className=""   name="applyByMentor"  format="dd-MM-y"dayPlaceholder="day" monthPlaceholder="month"  yearPlaceholder="year" required={true}/>
         </div> 
 </div>
           
@@ -326,7 +326,10 @@ const EditProgram = () => {
             <p className="ms-1">Is paid program?</p>
           </div> &nbsp;&nbsp;
          
-             
+           
+               {
+              given?.studentFields?.paid ?
+                
               <div className="w-25 ">
               <p className="text-start m-0">Program fees</p>
               <div className="d-flex text-start">
@@ -335,12 +338,12 @@ const EditProgram = () => {
                   <label>₹</label>
               </div>
                </div>
-               {/* {
-              paidProgram ?
+
+
               : 
               ''
 
-            } */}
+            }
        
            
          
@@ -479,7 +482,7 @@ const EditProgram = () => {
  </div>
  </div>
  </div> */}
- <input type="submit" className="btn btn-success w-100 container mt-2"  value="Send Program"/>
+ 
 
 
  </form>
