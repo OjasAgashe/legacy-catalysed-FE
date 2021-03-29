@@ -23,11 +23,12 @@ import EditProgram from './components/EditProgram/EditProgram';
 export const UserContext=createContext<any>(null||Boolean||String) 
 const  App:FC=()=> {
 const[id,setId]=useState()
+const[givenDate,setGivenDate]=useState()
  
   return (
     <div className="App">
       
-<UserContext.Provider value={{id,setId}}>
+<UserContext.Provider value={{id,setId,givenDate,setGivenDate}}>
       <Router>
         <Switch>
         <Route path="/organizer">

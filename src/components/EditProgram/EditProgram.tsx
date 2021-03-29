@@ -11,6 +11,7 @@ import moment from 'moment';
 
 const EditProgram = () => {
 
+  const{givenDate}=useContext(UserContext)
   
   const{userId}=useParams<any>()
   const[given,setGiven]=useState<any>()
@@ -20,22 +21,25 @@ const EditProgram = () => {
 
     axios.get<any>(`https://catalysed-iteration1.el.r.appspot.com/program/${userId}`)
     .then((res)=>{
-  console.log(res.data);
+  console.log(res.data.id);
     setGiven(res.data);
   
   
     })
   },[])
 
+const[dating,setDating]=useState<any>('')
+  const dateSplit=given?.tentativeStartDate.split('/');
 
-//   const dateSplit=given?.tentativeStartDate.split('/');
-
-//   const dateJoin=[dateSplit?.[2],dateSplit?.[1],dateSplit?.[0]].join('-');
-//   console.log(dateJoin,typeof(dateJoin))
- 
-// const dateObj = new Date('2000-07-21');
+  const dateJoin=[dateSplit?.[2],dateSplit?.[1],dateSplit?.[0]].join('-');
+  console.log(dateJoin,typeof(dateJoin))
+  useEffect(()=>{
+    setDating(dateJoin)
+  },[])
+  console.log(dating)
+  const dateObj = new Date(dateJoin);
   
-//   console.log(dateObj);
+  console.log(dateObj);
   
 
 
@@ -55,7 +59,7 @@ const EditProgram = () => {
         <>
            <Header />
        
-       <h1 className="text-center"><u>Create Program</u></h1>
+       <h1 className="text-center"><u>Edit Program</u></h1>
       <form >
      <div className="row ">
         <div className="col-md-7 d-flex justify-content-center ms-2 me-2">
@@ -90,7 +94,7 @@ const EditProgram = () => {
 <p className=" text-start m-0 "> <label >Tentative Start Date:</label></p>
 <div className="react-date-picker rounded  mt-1  ">
 
- <DatePicker clearIcon={null}  className=""   name="tentativeStartDate" format="dd-MM-y" dayPlaceholder="day" monthPlaceholder="month"
+ <DatePicker clearIcon={null}  className="" value={givenDate}  name="tentativeStartDate" format="dd-MM-y" dayPlaceholder="day" monthPlaceholder="month"
  yearPlaceholder="year" required={true}/> 
 
 </div>
@@ -117,7 +121,7 @@ const EditProgram = () => {
       <div className="d-flex justify-content-between">
       <div className="me-3">
       <p className=" text-start m-0"> <label >Virtual</label></p>
-    <input type="radio" id="male" className="form-check-input" name="mode" value="Virtual" 
+    <input type="radio" id="male" className="form-check-input" name="mode" value="Virtual" checked={true}
       required/>
       </div>
       <div className="">

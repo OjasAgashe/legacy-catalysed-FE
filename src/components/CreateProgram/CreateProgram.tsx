@@ -88,7 +88,7 @@ const CreateProgram:FC =()=> {
       generalInstructions: ""
     }
   })
-  const{id,setId}=useContext(UserContext)
+  const{id,setId,setGivenDate}=useContext(UserContext)
   const [date, setDate] = useState<any>();
   const[studentDate,setStudentDate]=useState<any>()
   const[mentorDate,setMentorDate]=useState<any>()
@@ -99,7 +99,7 @@ const history=useHistory()
 
 const handleDate=(e:any)=>{
 
-
+setGivenDate(e)
   setDate(e)
   
   const month = ("0" + (e.getMonth() + 1)).slice(-2);
