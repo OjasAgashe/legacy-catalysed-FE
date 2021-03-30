@@ -5,6 +5,8 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './ProgramDetail.css'
 import { UserContext } from '../../App';
+import Collapsible from 'react-collapsible';
+import DatePicker from 'react-date-picker';
 
 const ProgramDetail = () => {
 
@@ -50,7 +52,7 @@ const ProgramDetail = () => {
   <h3 className="   text-secondary">12/3/2001</h3>
      </div> 
      &nbsp; &nbsp;
- <div className="d-flex">
+ <div className="d-flex ">
    <h4> &nbsp; Duration :</h4>
    <h6 className="mt-1 text-secondary">  &nbsp;6 months</h6>
  </div>
@@ -70,15 +72,18 @@ const ProgramDetail = () => {
  </div> 
  <div className="d-flex ms-5">
  <h4 className=" ms-5 ps-4">Age   <span className= "">:</span>  <br/>Limit</h4>
-<h4 className="text-secondary ms-2">6 to 16</h4>
+<h4 className="text-secondary ms-2">6 <span className="text-dark">to</span>  16</h4>
  </div>
           </div>
           <div className="col-md-5 ">
             <div className="card bg-light">
               <div className="card-body">
                
-                <div className="d-flex">
-                  <h5>Program Link :</h5>
+                <div className="d-flex w-100">
+                  <p className="d-flex">
+                  <h5>Program Link </h5>
+                  <h5>:</h5>
+                  </p>
                   <h6 className="mt-1" ><u>https://www.npmjs.com/package/react-datepicker</u></h6>
                 </div>
                 <h3 className='text-center'>
@@ -99,6 +104,7 @@ const ProgramDetail = () => {
                   <h6 className="mt-1 ms-1">+880 123456</h6>
                 </div>
                 </div>
+
                 </div>
               </div>
             </div>
@@ -107,7 +113,106 @@ const ProgramDetail = () => {
   
   
   
- </div>
+ 
+
+ <Collapsible className="container w-auto  collapsible-student-field bg-light mt-2 pb-2 w-100 h-auto collapsible" open={true}overflowWhenOpen="visible" openedClassName="container  collapsible-student-field   collapsible bg-light pb-2  mt-2 " triggerTagName="div"triggerWhenOpen={<p className="text-start mt-3"> <b>^ </b>Mentor Fields &nbsp;<span className="bg-secondary text-white"><i className="fas fa-info-circle"></i>(This field is only visible for mentors)</span></p>} trigger={<p className="text-start mt-3 "> <b className="sign-left">&gt;</b> Mentor Fields &nbsp;<span className="bg-secondary text-white "><i className="fas fa-info-circle"></i>(This field is only visible for mentors)</span></p>} 
+             >
+          
+<div className="bg-white p-2">
+<div className=" d-flex justify-content-start">
+    <div className="d-flex ">
+
+    <h6 className=""> <label >Skills/Subject requirements:</label></h6>
+  <p className="ms-1">English,Hindi</p>
+    </div>
+   </div>
+   <div className="d-flex justify-content-start mt-3">
+     <div>
+   <div className=" d-flex  ">
+             
+             <h6 className=" text-start m-0"> <label >Number of openings:</label></h6>
+               <p className="ms-1"> 5 </p>      
+                   
+                    </div>    
+                    <div className=" d-flex  ">
+ 
+  <h6 className="text-start "> <label >Application End Date:</label></h6>
+   <p className="ms-1">22/01/2011</p>
+         </div> 
+           </div>
+   </div>
+             
+             
+           
+            <div className="d-flex  justify-content-start">
+              <div className="w-100 text-start d-flex">
+              <h6 className="d-flex"><span>Instructions</span>
+              <span>:</span>
+               </h6>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              </div>
+           
+            </div>
+            </div>
+    </Collapsible>
+    <Collapsible className="container collapsible-student-field bg-light mt-2  collapsible" open={true}overflowWhenOpen="visible" openedClassName="container  collapsible-student-field  collapsible bg-light  pb-2 mt-2 " triggerTagName="div"triggerWhenOpen={<p className="text-start mt-3"> <b>^ </b>Student Fields &nbsp;<span className="bg-secondary text-white"><i className="fas fa-info-circle"></i>(This field is only visible for students)</span></p>} trigger={<p className="text-start mt-3 "> <b className="sign-left">&gt;</b> Student Fields &nbsp;<span className="bg-secondary text-white "><i className="fas fa-info-circle"></i>(This field is only visible for students)</span></p>} 
+             >
+              <div className="bg-white p-2">
+      <div className=" d-flex justify-content-start ">
+        <div className=" ">
+
+     <p className=" text-start m-0"> <label >Skills/Subject requirements</label></p>
+    <input type="text" className="w-100 form-control "  name="subjectRequirementsStudent" id="formGroupExampleInput" placeholder="Skills" required/>
+    </div>
+   </div>
+   <div className="d-flex justify-content-start mt-2">
+   <div className=" w-25">
+             
+             <p className=" text-start m-0"> <label >Number of openings:</label></p>
+                      <input type="number" className="w-25 form-control" name="openingsStudent" min="0" required/>
+                   
+                    </div>    
+                    <div className="  ">
+ 
+    <p className=" text-start m-0"> <label >Application End Date:</label></p>
+    <DatePicker clearIcon={null}   format="dd-MM-y"dayPlaceholder="day" monthPlaceholder="month"  yearPlaceholder="year" name="applyByStudent" required={true}/>
+           </div> 
+   </div>
+             <div className="d-flex">
+             <div className="d-flex">
+               <input type="checkbox"   className="mt-1 form-check-input" required/>
+               <p className="ms-1">Is paid program?</p>
+             </div> &nbsp;&nbsp;
+            
+            
+                 <div className="w-25 ">
+                 <p className="text-start m-0">Program fees</p>
+                 <div className="d-flex text-start">
+                
+                 <input type="number" name="programFees" className=" form-control-md paid-program-input form-control" min="0" required/> &nbsp;
+                     <label>₹</label>
+                 </div>
+                  </div>
+               
+
+               
+          
+              
+            
+             </div>
+             
+           
+            <div className="d-flex justify-content-start mt-3">
+              <div className="w-100 text-start">
+              <p className="m-0">General Instructions </p>
+             <textarea  className="form-control " id=""   name="generalInstructionsStudent" cols={3} rows={3}  placeholder="General Instructions*"required/>
+              </div>
+           
+            </div>
+            </div>
+
+               </Collapsible>
+               </div>
  </div>
    
     </TabPanel>
