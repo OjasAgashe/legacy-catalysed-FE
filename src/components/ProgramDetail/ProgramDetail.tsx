@@ -33,7 +33,7 @@ const ProgramDetail = () => {
     <i className="fas fa-info-circle ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Publish the program, few fields will not be editable after publish"></i>
 
     <div className ="d-flex justify-content-start  ">
-      <div>
+    <div className="ms-2">
         <div className="row">
           <div className="col-md-7 ">
           <div className="d-flex ms-5">
@@ -159,23 +159,23 @@ const ProgramDetail = () => {
              >
               <div className="bg-white p-2">
       <div className=" d-flex justify-content-start ">
-        <div className=" ">
+        <div className="d-flex ">
 
-     <p className=" text-start m-0"> <label >Skills/Subject requirements</label></p>
-    <input type="text" className="w-100 form-control "  name="subjectRequirementsStudent" id="formGroupExampleInput" placeholder="Skills" required/>
+     <h6 className=" text-start m-0"> <label >Skills/Subject requirements :</label></h6>
+    <p className="ms-1">English,Hindi</p>
     </div>
    </div>
-   <div className="d-flex justify-content-start mt-2">
-   <div className=" w-25">
+   <div className="  mt-2">
+   <div className=" d-flex">
              
-             <p className=" text-start m-0"> <label >Number of openings:</label></p>
-                      <input type="number" className="w-25 form-control" name="openingsStudent" min="0" required/>
+             <h6 className=" text-start m-0"> <label >Number of openings:</label></h6>
+             <p className="ms-1">6</p>
                    
                     </div>    
-                    <div className="  ">
+                    <div className=" d-flex ">
  
-    <p className=" text-start m-0"> <label >Application End Date:</label></p>
-    <DatePicker clearIcon={null}   format="dd-MM-y"dayPlaceholder="day" monthPlaceholder="month"  yearPlaceholder="year" name="applyByStudent" required={true}/>
+    <h6 className=" text-start m-0"> <label >Application End Date:</label></h6>
+   <p>21/09/2001</p>
            </div> 
    </div>
              <div className="d-flex">
@@ -185,12 +185,12 @@ const ProgramDetail = () => {
              </div> &nbsp;&nbsp;
             
             
-                 <div className="w-25 ">
-                 <p className="text-start m-0">Program fees</p>
+                 <div className="d-flex ">
+                 <h6 className="text-start m-0">Program fees :</h6>
                  <div className="d-flex text-start">
                 
-                 <input type="number" name="programFees" className=" form-control-md paid-program-input form-control" min="0" required/> &nbsp;
-                     <label>₹</label>
+                <p>6</p> &nbsp;
+                     <b>₹</b>
                  </div>
                   </div>
                
@@ -203,9 +203,10 @@ const ProgramDetail = () => {
              
            
             <div className="d-flex justify-content-start mt-3">
-              <div className="w-100 text-start">
-              <p className="m-0">General Instructions </p>
-             <textarea  className="form-control " id=""   name="generalInstructionsStudent" cols={3} rows={3}  placeholder="General Instructions*"required/>
+              <div className="w-100 text-start d-flex">
+              <h6 className="d-flex"><span>General Instructions</span>
+              <span> :</span></h6>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
               </div>
            
             </div>
