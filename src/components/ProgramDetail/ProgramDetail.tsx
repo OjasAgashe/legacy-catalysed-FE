@@ -141,9 +141,9 @@ const ProgramDetail = () => {
        <p className="ms-1"> 5 </p>      
               
             </div>    
-    <div className=" d-flex  ">
+    <div className="d-flex">
  
-      <h6 className="text-start ">
+      <h6 className="text-start">
       <label >Application End Date:</label>
       </h6>
       <p className="ms-1">
