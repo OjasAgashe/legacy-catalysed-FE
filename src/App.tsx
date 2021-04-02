@@ -31,34 +31,34 @@ const[givenDate,setGivenDate]=useState()
 <UserContext.Provider value={{id,setId,givenDate,setGivenDate}}>
       <Router>
         <Switch>
-        <Route path="/organizer">
+        <Route exact path="/organizer">
           <OrganizationRegistration/>
         </Route>
         <Route exact path="/organizationDetail">
          <OrganizationDetail/>
         </Route>
-        <Route path="/student">
+        <Route exact path="/student">
          <StudentRegistration/>
         </Route>
         <Route path="/editProgram/:userId">
          <EditProgram/>
         </Route>
-        <Route path="/mentor">
+        <Route exact path="/mentor">
          <MentorRegistration/>
         </Route>
-        <Route path="/welcome">
+        <Route exact path="/welcome">
           <Welcome/>
         </Route>
-        <Route path="/homePage">
+        <Route exact path="/homePage">
           <HomepageContainer/>
         </Route>
-        <Route path="/programDetail">
+        <Route exact path="/programDetail">
           <ProgramDetail/>
         </Route>
-        <Route path="/createProgram">
+        <Route exact path="/createProgram">
           <CreateProgram  />
         </Route>
-        <Route path="/login">
+        <Route exact path="/login">
           <Login/>
         </Route>
         <Route exact path="/">
