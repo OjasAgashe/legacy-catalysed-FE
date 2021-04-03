@@ -79,7 +79,7 @@ Description:
 
 <div className="d-flex col-md-6 ">
 <h4> &nbsp; Duration :</h4>
-<h6 className="mt-1 text-secondary">  &nbsp;{programDetails?.durationInMonths} months</h6>
+<h4 className="mt-1 text-secondary">  &nbsp;{programDetails?.durationInMonths} months</h4>
 </div>
 </div>  
 
