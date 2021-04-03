@@ -648,7 +648,7 @@ f.preventDefault()
    </div>
              <div className="d-flex">
              <div className="d-flex">
-               <input type="checkbox" checked={paidProgram} name="paid" value={paidProgram} onClick={handleIsPaid} onChange={()=>setPaidProgram(!paidProgram) } className="mt-1 form-check-input" required/>
+               <input type="checkbox" checked={paidProgram} name="paid" value={paidProgram} onClick={handleIsPaid} onChange={()=>setPaidProgram(!paidProgram) } className="mt-1 form-check-input" />
                <p className="ms-1">Is paid program?</p>
              </div> &nbsp;&nbsp;
             

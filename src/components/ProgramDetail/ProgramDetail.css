@@ -1,6 +1,12 @@
 .program-detail-card{
 
-    width:600px;
+    
     height:400px;
+    width:auto;
 }
+.program-detail-mentor-generalInstructions,.program-detail-student-generalInstructions {
+    width:70vw;
+}
+
+
 
