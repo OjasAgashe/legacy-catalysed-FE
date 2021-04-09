@@ -19,9 +19,7 @@
     width:380px;
     height:340px;
 }
-.paid-program-input{
-    width:60px
-}
+
 .collapsible{
   border:0.5px solid lightgray;
   border-radius:5px 5px 5px 5px;
@@ -32,10 +30,10 @@
 .sign-left{
     font-weight:bold;
 }
-.collapsible-student-field{
-
-    
-    
+.number-of-openings-input ,
+.paid-program-input,
+.duration-in-months-input {
+width:80px !important;
 }
 
 

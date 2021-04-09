@@ -410,7 +410,7 @@ f.preventDefault()
          
        
 
- <div className="d-flex justify-content-start   ">
+ <div className="d-flex justify-content-start">
  <div className=" tentative-date-container me-4">
  
  <p className=" text-start m-0 "> <label >Tentative Start Date:</label></p>
@@ -427,8 +427,8 @@ f.preventDefault()
           
  <p className=" text-start mb-1"> <label >Duration:</label></p>
  <div className="d-flex m-0">
- <input type="number" className=" form-control  "  name="durationInMonths" min="0" onChange={handleProgramBlur}
- onBlur={handleProgramBlur} required/>
+ <input type="number" className=" form-control  duration-in-months-input"  name="durationInMonths" min="0" onChange={handleProgramBlur}
+ onBlur={handleProgramBlur} required/>&nbsp;
           <label className="mt-1 ml-1">month</label>
  </div>
          
@@ -599,7 +599,7 @@ f.preventDefault()
    <div className=" w-25  ">
              
              <p className=" text-start m-0"> <label >Number of openings:</label></p>
-                      <input type="number" name="openingsMentor"  onChange={handleProgramBlur} onClick={handleProgramBlur} className="w-25 form-control"  min="0"required/>
+                      <input type="number" name="openingsMentor"  onChange={handleProgramBlur} onClick={handleProgramBlur} className="w-25  form-control number-of-openings-input"  min="0"required/>
                    
                     </div>    
                     <div className="  ">
@@ -637,7 +637,7 @@ f.preventDefault()
    <div className=" w-25">
              
              <p className=" text-start m-0"> <label >Number of openings:</label></p>
-                      <input type="number"onChange={handleProgramBlur} onClick={handleProgramBlur}  className="w-25 form-control" name="openingsStudent" min="0" required/>
+                      <input type="number"onChange={handleProgramBlur} onClick={handleProgramBlur}  className="w-25 form-control number-of-openings-input" name="openingsStudent" min="0" required/>
                    
                     </div>    
                     <div className="  ">
