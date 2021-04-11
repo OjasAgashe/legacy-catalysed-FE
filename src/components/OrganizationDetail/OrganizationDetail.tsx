@@ -23,6 +23,7 @@ const OrganizationDetail = () => {
                    <p className="my-auto">Organization Website</p>
             <input type="url" className="form-control mt-2 organization-detail-input form-control-sm " placeholder="Organization Website" />
             </div><br/>
+            <input type="submit" className="btn btn-success mt-4 w-100" value="Submit"/>
    
           
        

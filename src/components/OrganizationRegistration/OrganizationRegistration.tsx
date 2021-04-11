@@ -6,15 +6,15 @@ import './OrganizationRegistration.css'
 const OrganizationRegistration = () => {
 
 const history= useHistory()
-const [values,setValues]=useState({
+const [organizationRegistrationInfo,setOrganizationRegistrationInfo]=useState({
         firstName:'',
         lastName:'',
         email:'',
         password:'',
         confirmPassword:''
     })
-const [isSubmitting,setIsSubmitting]=useState(false)
-const [errors,setErrors]=useState({
+
+const [errorsOrganizerRegistration,setErrorsOrganizerRegistration]=useState({
     firstName:'',
     lastName:'',
     email:'',
@@ -22,87 +22,102 @@ const [errors,setErrors]=useState({
     confirmPassword:''
 })
 
-const validateInfo=(values:any)=>{
+const validateOrganizationRegistration=(organizationRegistrationInfo:any)=>{
 
-        if(values.firstName.trim()){
-            errors.firstName=""
+        if(organizationRegistrationInfo.firstName.trim()){
+            errorsOrganizerRegistration.firstName=""
           }
     
-        if(!values.firstName.trim()){
-          errors.firstName=""
+        if(!organizationRegistrationInfo.firstName.trim()){
+          errorsOrganizerRegistration.firstName=""
         }
-        else if (!/^[a-z ,.'-]+$/i.test(values.firstName.trim())) {
-              errors.firstName = 'Enter a valid name'
+        else if (!/^[a-z ,.'-]+$/i.test(organizationRegistrationInfo.firstName.trim())) {
+              errorsOrganizerRegistration.firstName = 'Enter a valid name'
         }
 
         
-        if(values.lastName.trim()){
-            errors.lastName=""
+        if(organizationRegistrationInfo.lastName.trim()){
+            errorsOrganizerRegistration.lastName=""
           }
     
-        if(!values.lastName.trim()){
-          errors.lastName=""
+        if(!organizationRegistrationInfo.lastName.trim()){
+          errorsOrganizerRegistration.lastName=""
         }
-      else if (!/^[a-zA-Z]+$/.test(values.lastName.trim())) {
-        errors.lastName = 'Enter a valid name'
+      else if (!/^[a-zA-Z]+$/.test(organizationRegistrationInfo.lastName.trim())) {
+        errorsOrganizerRegistration.lastName = 'Enter a valid name'
       }
 
-      if (values.email) {
-        errors.email = ''
+      if (organizationRegistrationInfo.email) {
+        errorsOrganizerRegistration.email = ''
       } 
-      if (!values.email) {
-        errors.email = ''
+      if (!organizationRegistrationInfo.email) {
+        errorsOrganizerRegistration.email = ''
       } 
-      else if (!/\S+@\S+\.\S+/.test(values.email)) {
-        errors.email = 'Enter valid email address'
+      else if (!/\S+@\S+\.\S+/.test(organizationRegistrationInfo.email)) {
+        errorsOrganizerRegistration.email = 'Enter valid email address'
       }
 
-      if(values.password){
-          errors.password=""
-      }if(!values.password){
-        errors.password=""
-    }else if(values.password.length<6){
-       errors.password="Password needs to be 6 characters or more"
+      if(organizationRegistrationInfo.password){
+          errorsOrganizerRegistration.password=""
+      }if(!organizationRegistrationInfo.password){
+        errorsOrganizerRegistration.password=""
+    }else if(organizationRegistrationInfo.password.length<8){
+       errorsOrganizerRegistration.password="Password needs to be 8 characters or more"
       }
 
-     if(values.confirmPassword){
-          errors.confirmPassword=""
-      } if(!values.confirmPassword){
-          errors.confirmPassword=""
-      }else if(values.confirmPassword !==values.password){
-          errors.confirmPassword="Passwords did not match...Check again"
+     if(organizationRegistrationInfo.confirmPassword){
+          errorsOrganizerRegistration.confirmPassword=""
+      } if(!organizationRegistrationInfo.confirmPassword){
+          errorsOrganizerRegistration.confirmPassword=""
+      }else if(organizationRegistrationInfo.confirmPassword && organizationRegistrationInfo.password.length==0){
+        errorsOrganizerRegistration.confirmPassword="First  fill up the password field"
+    }else if(organizationRegistrationInfo.confirmPassword !==organizationRegistrationInfo.password){
+          errorsOrganizerRegistration.confirmPassword="Password did not match...Check again"
       }
 
-      console.log(errors);
+      console.log(errorsOrganizerRegistration);
+      
+     
       
 }
 
 
 const  handleChange =(e:any) =>{
     const{name,value}=e.target
-    setValues({
-...values,
+    setOrganizationRegistrationInfo({
+...organizationRegistrationInfo,
 [name]:value
     } )
  
   
    
-    console.log(values)
+    console.log(organizationRegistrationInfo)
 } 
 const handleCapture =(e:any) =>{
     const{name,value}=e.target
-    setValues({
-...values,
+    setOrganizationRegistrationInfo({
+...organizationRegistrationInfo,
 [name]:value
     } )
  
-validateInfo(values)
+validateOrganizationRegistration(organizationRegistrationInfo)
    
-    console.log(values)
+    console.log(organizationRegistrationInfo)
 } 
 
 const handleSubmit=(e:any)=>{
-     e.preventDefault()
+    if(errorsOrganizerRegistration.firstName.length!==0 ||
+        errorsOrganizerRegistration.lastName.length!==0  ||
+        errorsOrganizerRegistration.email.length!==0||
+        errorsOrganizerRegistration.password.length!==0||
+        errorsOrganizerRegistration.confirmPassword.length!==0      
+      ){
+      alert("Fill up all the  fields carefully first....")
+    }else{
+      alert("You have registered successfully....Press OK to go the next page")
+      history.push('organizationDetail')
+    }
+    e.preventDefault()
 }
     
     return (
@@ -111,57 +126,66 @@ const handleSubmit=(e:any)=>{
             <div className="organization-registration-container container-fluid  my-auto bg-white">
             <h1>Create an account</h1> 
         <form className=" container mt-4" onSubmit={handleSubmit} >
-            <div className="d-flex   ">
+            <span className="d-flex   ">
+              <span>
             <input type="text" className="form-control organization-registration-form-control form-control-sm first-name overflow-hidden" name="firstName"
-             value={values.firstName} 
+             value={organizationRegistrationInfo.firstName} 
             onChange={handleChange}
          onSelectCapture={handleCapture}
              placeholder="First Name"
              required/>
-             {
-                 errors.firstName &&<p className="text-danger">{errors.firstName}</p>
+              {
+                 errorsOrganizerRegistration.firstName &&<span className="text-danger">{errorsOrganizerRegistration.firstName}</span>
              } 
-             &nbsp;<br/>
+             </span>
+            
+             &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; <br/>
+            
+            
+             <span >  
             <input type="text" className="form-control organization-registration-form-control form-control-sm last-name  overflow-hidden "
              name="lastName" 
              placeholder="Last Name"
              onChange={handleChange}
          onSelectCapture={handleCapture}
-             value={values.lastName} 
+             value={organizationRegistrationInfo.lastName} 
             required/>
              {
-                 errors.lastName &&<p>{errors.lastName}</p>
-             } 
-            </div><br/>
-            <input type="text" className="form-control organization-registration-form-control form-control-sm " placeholder="Your Official Email Id"
+                 errorsOrganizerRegistration.lastName &&<span className="text-danger ">{errorsOrganizerRegistration.lastName}</span>
+             }
+             </span>
+              
+            </span>
+            <input type="email" className={`form-control organization-registration-form-control form-control-sm  ${errorsOrganizerRegistration.lastName||errorsOrganizerRegistration.firstName ? 'mt-1':'mt-3'}`} placeholder="Your Official Email Id"
              name="email" 
              onChange={handleChange}
-            onSelectCapture={handleCapture}
-             value={values.email} 
+        onBlur= {handleCapture}
+             value={organizationRegistrationInfo.email} 
              required/>
-            <br/>
-            {
-                 errors.email &&<p>{errors.email}</p>
+              {
+                 errorsOrganizerRegistration.email &&<span className="text-danger">{errorsOrganizerRegistration.email}</span>
             }
+            <br/>
+           
             <input type="password" className="form-control organization-registration-form-control form-control-sm " placeholder="Password" 
-             value={values.password} 
+             value={organizationRegistrationInfo.password} 
              onChange={handleChange}
              onBlur={handleCapture}
             name="password" required/>
             {
-                 errors.password &&<p>{errors.password}</p>
+                 errorsOrganizerRegistration.password &&<span className="text-danger">{errorsOrganizerRegistration.password}</span>
             }
             <br/>
             <input type="password"
              name="confirmPassword" 
              className="form-control organization-registration-form-control form-control-sm "
               placeholder="Confirm Password"
-            value={values.confirmPassword} 
+            value={organizationRegistrationInfo.confirmPassword} 
               onChange={handleChange}
               onBlur={handleCapture}
               required />
               {
-                errors.confirmPassword && <p>{errors.confirmPassword}</p>
+                errorsOrganizerRegistration.confirmPassword && <span className="text-danger">{errorsOrganizerRegistration.confirmPassword}</span>
               }
             <input type="submit" className="btn btn-success mt-4 w-100" value="Register now"/>
   

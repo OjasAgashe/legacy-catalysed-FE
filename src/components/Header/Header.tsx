@@ -72,7 +72,7 @@ const[loggedInUser,setLoggedInUser]=useState(true)
           :
           <button className="btn btn-outline-success me-2" onClick={()=>{history.push('/login')}} type="submit">Login</button>
         }
-       
+       <button className="btn btn-outline-success me-2" onClick={()=>{history.push('/login')}} type="submit">Login</button>
       </div>
     </div>
   </div>
