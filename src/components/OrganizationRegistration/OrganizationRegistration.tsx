@@ -31,7 +31,7 @@ const validateOrganizationRegistration=(organizationRegistrationInfo:any)=>{
         if(!organizationRegistrationInfo.firstName.trim()){
           errorsOrganizerRegistration.firstName=""
         }
-        else if (!/^[a-z ,.'-]+$/i.test(organizationRegistrationInfo.firstName.trim())) {
+        else if (!/^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/i.test(organizationRegistrationInfo.firstName.trim())) {
               errorsOrganizerRegistration.firstName = 'Enter a valid name'
         }
 
@@ -82,7 +82,7 @@ const validateOrganizationRegistration=(organizationRegistrationInfo:any)=>{
 }
 
 
-const  handleChange =(e:any) =>{
+const  handleOrganizationRegistrationChange =(e:any) =>{
     const{name,value}=e.target
     setOrganizationRegistrationInfo({
 ...organizationRegistrationInfo,
@@ -93,7 +93,7 @@ const  handleChange =(e:any) =>{
    
     console.log(organizationRegistrationInfo)
 } 
-const handleCapture =(e:any) =>{
+const handleOrganizationRegistrationCapture =(e:any) =>{
     const{name,value}=e.target
     setOrganizationRegistrationInfo({
 ...organizationRegistrationInfo,
@@ -105,7 +105,7 @@ validateOrganizationRegistration(organizationRegistrationInfo)
     console.log(organizationRegistrationInfo)
 } 
 
-const handleSubmit=(e:any)=>{
+const handleOrganizationRegistrationSubmit=(e:any)=>{
     if(errorsOrganizerRegistration.firstName.length!==0 ||
         errorsOrganizerRegistration.lastName.length!==0  ||
         errorsOrganizerRegistration.email.length!==0||
@@ -125,13 +125,13 @@ const handleSubmit=(e:any)=>{
          <div  className="d-flex justify-content-center organization-registration-mother-container " >
             <div className="organization-registration-container container-fluid  my-auto bg-white">
             <h1>Create an account</h1> 
-        <form className=" container mt-4" onSubmit={handleSubmit} >
+        <form className=" container mt-4" onSubmit={handleOrganizationRegistrationSubmit} >
             <span className="d-flex   ">
               <span>
             <input type="text" className="form-control organization-registration-form-control form-control-sm first-name overflow-hidden" name="firstName"
              value={organizationRegistrationInfo.firstName} 
-            onChange={handleChange}
-         onSelectCapture={handleCapture}
+            onChange={handleOrganizationRegistrationChange}
+         onBlur={handleOrganizationRegistrationCapture }
              placeholder="First Name"
              required/>
               {
@@ -146,8 +146,8 @@ const handleSubmit=(e:any)=>{
             <input type="text" className="form-control organization-registration-form-control form-control-sm last-name  overflow-hidden "
              name="lastName" 
              placeholder="Last Name"
-             onChange={handleChange}
-         onSelectCapture={handleCapture}
+             onChange={handleOrganizationRegistrationChange}
+         onBlur={handleOrganizationRegistrationCapture }
              value={organizationRegistrationInfo.lastName} 
             required/>
              {
@@ -158,8 +158,8 @@ const handleSubmit=(e:any)=>{
             </span>
             <input type="email" className={`form-control organization-registration-form-control form-control-sm  ${errorsOrganizerRegistration.lastName||errorsOrganizerRegistration.firstName ? 'mt-1':'mt-3'}`} placeholder="Your Official Email Id"
              name="email" 
-             onChange={handleChange}
-        onBlur= {handleCapture}
+             onChange={handleOrganizationRegistrationChange}
+        onBlur= {handleOrganizationRegistrationCapture }
              value={organizationRegistrationInfo.email} 
              required/>
               {
@@ -169,8 +169,8 @@ const handleSubmit=(e:any)=>{
            
             <input type="password" className="form-control organization-registration-form-control form-control-sm " placeholder="Password" 
              value={organizationRegistrationInfo.password} 
-             onChange={handleChange}
-             onBlur={handleCapture}
+             onChange={handleOrganizationRegistrationChange}
+             onBlur={handleOrganizationRegistrationCapture }
             name="password" required/>
             {
                  errorsOrganizerRegistration.password &&<span className="text-danger">{errorsOrganizerRegistration.password}</span>
@@ -181,8 +181,8 @@ const handleSubmit=(e:any)=>{
              className="form-control organization-registration-form-control form-control-sm "
               placeholder="Confirm Password"
             value={organizationRegistrationInfo.confirmPassword} 
-              onChange={handleChange}
-              onBlur={handleCapture}
+              onChange={handleOrganizationRegistrationChange}
+              onBlur={handleOrganizationRegistrationCapture }
               required />
               {
                 errorsOrganizerRegistration.confirmPassword && <span className="text-danger">{errorsOrganizerRegistration.confirmPassword}</span>
