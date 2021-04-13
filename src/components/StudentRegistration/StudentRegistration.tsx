@@ -111,9 +111,9 @@ const handleStudentRegistrationSubmit=(e:any)=>{
         errorsStudentRegistration.password.length!==0||
         errorsStudentRegistration.confirmPassword.length!==0      
       ){
-      alert("Fill up all the  fields carefully first....")
-    }else{
-      alert("You have registered successfully....")
+        alert("Fill up all the fields carefully first....")
+      }else{
+        alert("You have been registered successfully....")
     
     }
     e.preventDefault()

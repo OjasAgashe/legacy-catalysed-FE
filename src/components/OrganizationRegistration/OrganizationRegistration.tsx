@@ -112,7 +112,7 @@ const handleOrganizationRegistrationSubmit=(e:any)=>{
         errorsOrganizerRegistration.password.length!==0||
         errorsOrganizerRegistration.confirmPassword.length!==0      
       ){
-      alert("Fill up all the  fields carefully first....")
+      alert("Fill up all the fields carefully first....")
     }else{
       alert("You have registered successfully....Press OK to go the next page")
       history.push('organizationDetail')
