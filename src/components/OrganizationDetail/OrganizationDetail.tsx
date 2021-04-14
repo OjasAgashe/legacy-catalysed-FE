@@ -83,8 +83,8 @@ const OrganizationDetail = () => {
             <h6 className=" text-start m-0"> <label >Organization Website</label></h6>
 
             <input type="url" className="form-control  organization-detail-input form-control-md " placeholder="Type your organization website link here" required/>
-            </div><br/>
-            <input type="submit" className="btn btn-success  w-100" value="Submit"/>
+            </div>
+            <input type="submit" className="btn btn-success mt-4  w-100" value="Submit"/>
             </form>
    
           
