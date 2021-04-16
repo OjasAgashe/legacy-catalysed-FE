@@ -3,7 +3,7 @@ import './Footer.css'
 const Footer = () => {
     return (
         <>
-            <div className="row">
+            <div className="row w-auto">
             <div className="col-md-4 bg-dark">
              <h1 className="text-white">Contact Us</h1>
             </div>

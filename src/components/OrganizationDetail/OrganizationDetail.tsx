@@ -88,9 +88,6 @@ const OrganizationDetail = () => {
             </form>
    
           
-       
-      
-     
         </div>  
         </div> 
         </>

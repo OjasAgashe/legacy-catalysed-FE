@@ -59,48 +59,46 @@ console.log(res.data.id);
     <div className="col-md-7 ">
     <div className="d-flex ">
 
-<h3 className="">Title:</h3>
-<h3 className="  ms-1 text-secondary">{programDetails?.title}</h3>
+<h5 className="">Title:</h5>
+<p className="  ms-1 text-secondary"><b>{programDetails?.title}</b></p>
 </div>
 
-<div className="d-flex row text-start ">
-<h4 className="col-md-3">
-Description:
-</h4>
-<p className="col-md-7 mt-1 m-0 text-secondary text-start">
- {programDetails?.description}</p>
-</div>
+
+<p className="text-secondary  text-start mt-1"><h5 className="d-inline text-dark">Description:</h5>
+{programDetails?.description}
+</p> 
+
 
 <div className="d-flex row">
 <div className="d-flex col-md-6 ">
-<h4 className=""><span className="d-flex">Tentative Start  :</span> Date</h4>
-<h3 className="text-secondary">{programDetails?.tentativeStartDate}</h3>
+<h5 className=""><span className="d-flex">Tentative Start  :</span> Date</h5>
+<p className="text-secondary">{programDetails?.tentativeStartDate}</p>
 </div> 
 
 <div className="d-flex col-md-6 ">
-<h4> &nbsp; Duration :</h4>
-<h4 className="mt-1 text-secondary">  &nbsp;{programDetails?.durationInMonths} months</h4>
+<h5> &nbsp; Duration :</h5>
+<p className="mt-1 text-secondary">  &nbsp;{programDetails?.durationInMonths} months</p>
 </div>
 </div>  
 
 <div className="d-flex row">
 <div className="col-md-6">
 <div className="d-flex ">
-<h4 className="">Mode :</h4>
-<h4 className="text-secondary">{programDetails?.mode}</h4>
+<h5 className="">Mode :</h5>
+<p className="text-secondary">{programDetails?.mode}</p>
 </div>
 </div>
 
 <div className="d-flex col-md-6">
-<h4 className=""><span className= "d-flex">Language   :</span> Requirements</h4>
-<h4 className="text-secondary ms-2">{programDetails?.languageRequirements}</h4>
+<h5 className=""><span className= "d-flex">Language   :</span> Requirements</h5>
+<p className="text-secondary ms-2">{programDetails?.languageRequirements}</p>
 </div>
 </div> 
 
 <div className="d-flex ">
-<h4 className="">Age<span className= "">:</span>  <br/>Limit</h4>
+<h5 className="">Age<span className= "">:</span>  <br/>Limit</h5>
 
-<h4 className="text-secondary ms-2">{programDetails?.ageLimit?.from} <span className="text-dark">to</span>  {programDetails?.ageLimit?.to}</h4>
+<p className="text-secondary ms-2">{programDetails?.ageLimit?.from} <span className="text-dark">to</span>  {programDetails?.ageLimit?.to}</p>
 </div>
     </div>
     <div className="col-md-5 container">
