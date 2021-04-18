@@ -327,6 +327,7 @@ if(e.target.name === 'paid'){
           console.log('res',res);
           console.log('id',res.data.id);
           setId(res.data.id)
+          localStorage.setItem('id',res.data.id)
         setTimeout(()=>{
           history.push('/programDetail')
 

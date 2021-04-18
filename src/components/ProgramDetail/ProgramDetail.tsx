@@ -13,9 +13,10 @@ const ProgramDetail = () => {
 
 const[programDetails,setProgramDetails]=useState<any>()
 
+
 useEffect(()=>{
 
-  axios.get<any>(`https://catalysed-iteration1.el.r.appspot.com/program/${id}`)
+  axios.get<any>(`https://catalysed-iteration1.el.r.appspot.com/program/${localStorage.getItem('id')}`)
   .then((res)=>{
 console.log(res.data.id);
   setProgramDetails(res.data);
@@ -44,7 +45,7 @@ console.log(res.data.id);
 </ul>
 <div className="tab-content " id="myTabContent">
   <div className="tab-pane fade show active  border border-dark pt-1 pb-3 text-break" id="home" role="tabpanel" aria-labelledby="home-tab">
-  <Link style={{textDecoration:'none'}} to={`/editProgram/${id}`}>
+  <Link style={{textDecoration:'none'}} to={`/editProgram/${localStorage.getItem('id')}`}>
 
 <Button variant="contained" color="primary">Edit</Button>
 </Link>
