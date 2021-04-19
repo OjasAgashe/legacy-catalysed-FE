@@ -70,7 +70,7 @@ background-color:  #b9a9a2;
      text-justify: inter-word;
  }
 
- @media(max-width:430px){
+ @media(max-width:1000px){
   .about-us-description{
     width:95% !important;
     margin-bottom: 20px !important;
@@ -161,7 +161,7 @@ background-color:  #b9a9a2;
   background: transparent;
 }
 
-@media(max-width:430px){
+@media(max-width:1000px){
   .personalized-profile-description{
     width:95% !important;
     margin-bottom: 20px !important;
@@ -203,7 +203,7 @@ SearchRecommendation design */
   text-align: justify;
   text-justify: inter-word;
 }
-@media(max-width:430px){
+@media(max-width:1000px){
   .search-recommendation-description{
     width:95% !important;
     margin-bottom: 20px !important;
@@ -239,7 +239,7 @@ SearchRecommendation design */
   text-align: justify;
   text-justify: inter-word;
 }
-@media(max-width:430px){
+@media(max-width:1000px){
   .programs-interest-description{
     width:82% !important;
     margin-bottom: 20px !important;
@@ -272,7 +272,7 @@ SearchRecommendation design */
   text-align: justify;
   text-justify: inter-word;
 }
-@media(max-width:430px){
+@media(max-width:1000px){
   .plan-schedule-description{
     width:95% !important;
     margin-bottom: 20px !important;

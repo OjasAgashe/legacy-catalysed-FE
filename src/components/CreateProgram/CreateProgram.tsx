@@ -540,8 +540,8 @@ f.preventDefault()
     <p className=" text-start m-0"> <label htmlFor="phone">Phone</label></p>
     <div className="d-flex ">
     <input type="text" className=" phone-1st w-25 form-control " onChange={handleProgramBlur} 
-    onClick={handleProgramBlur} name="phoneExtension"id="phone" placeholder="" required/><span className="mt-1">-</span>
-    <input type="text" className="form-control w-75" id="phone"  name="phoneNumber" placeholder=""  onChange={handleProgramBlur} onClick={handleProgramBlur} required/>
+    onClick={handleProgramBlur} name="phoneExtension"id="phone" pattern= {'' }  placeholder="" required/><span className="mt-1">-</span>
+    <input type="text" className="form-control w-75" id="phone"  name="phoneNumber" placeholder="" pattern= {'' } onChange={handleProgramBlur} onClick={handleProgramBlur} required/>
     </div>
    
     </div>
