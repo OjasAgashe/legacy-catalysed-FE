@@ -10,6 +10,19 @@
 
 # production
 /build
+/NavHome
+CatalysedTitle/
+MissionVision/
+AboutUs/
+ProgramsInterest/
+PlanSchedule/
+
+PersonalizedProfile/
+
+SearchRecommendation/
+
+
+#files
 
 # misc
 .DS_Store

@@ -1,6 +1,19 @@
 .organization-detail-input{
-    border: 2px solid indigo;
+    border: 2px solid grey;
 }
 .organization-detail-textarea{
-    border: 3px solid indigo;
+    border: 3px solid gray;
+}
+.organization-detail-container{
+    width:450px;
+    height:460px;
+  
+}
+ /* same as  width */
+
+@media(max-width:450px){
+    .organization-detail-container{
+        width:95%;
+        height:460px;
+    }
 }

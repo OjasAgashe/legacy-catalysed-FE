@@ -1,0 +1,13 @@
+.logo{
+    height:50px;
+}
+
+.navbar{
+    background-color: #b9a9a2;
+    
+}
+@media(max-width:991px){
+    .navbar{
+        display: none;
+    }
+}
